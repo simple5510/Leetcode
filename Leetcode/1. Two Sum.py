@@ -27,3 +27,12 @@ class Solution:
                 return [buff_dict[nums[i]], i]
             else:
                 buff_dict[target - nums[i]] = i
+
+    def twoSum2(self, nums, target):
+        D = {}
+        for i in range(len(nums)):
+            D[nums[i]] = i
+        for i in range(len(nums)):
+            j = D.get(target - nums[i], None)
+            if j != None and i != j:
+                return [i, j]
